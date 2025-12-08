@@ -1,3 +1,14 @@
 body {
       background-image: url("images/christmasbackground.jpg");
     }
+    
+.boite {
+  display: inline-block; /* Permet à la boîte d’être centrée et contenue */
+  text-align: left; /* Aligne le texte à gauche à l’intérieur de la boîte */
+  border: 0.2em solid #c3f7eb; /* Bordure bleu pâle */
+  background-color: rgba(194, 11, 11, 0.6); /* Fond blanc semi-transparent */
+  padding: 1em; /* Espace intérieur */
+  margin: 1em; /* Espace extérieur */
+  width: 60%; /* Largeur de la boîte */
+  color: black; /* Couleur du texte */
+}
