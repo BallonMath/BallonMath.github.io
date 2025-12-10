@@ -1,5 +1,28 @@
-    
+body {
+  margin: 1em; /* Ajoute une marge autour de toute la page */
+  padding: 1em; /* Ajoute de l’espace intérieur à la page */
+  font-family: Georgia, serif; /* Définit la police principale du site */
+}
+
 .boite {
+  display: inline-block; /* Permet à la boîte d’être centrée et contenue */
+  text-align: middle; /* Aligne le texte à gauche à l’intérieur de la boîte */
+  border: 0.2em solid #cc1313; /* Bordure bleu pâle */
+  background-color: rgba(73, 110, 75, 0.6); /* Fond blanc semi-transparent */
+  padding: 1em; /* Espace intérieur */
+  margin: 1em; /* Espace extérieur */
+  width: 60%; /* Largeur de la boîte */
+  color: black; /* Couleur du texte */
+}
+
+.voyage {
+  color: #1a9191; /* Couleur turquoise */
+  font-style: italic; /* Texte en italique */
+  font-weight: bold; /* Texte en gras */
+  font-size: 30px; /* Taille de texte */
+}
+
+.titre {
   display: inline-block; /* Permet à la boîte d’être centrée et contenue */
   text-align: left; /* Aligne le texte à gauche à l’intérieur de la boîte */
   border: 0.2em solid #c3f7eb; /* Bordure bleu pâle */
