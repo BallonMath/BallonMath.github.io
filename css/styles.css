@@ -4,6 +4,13 @@ body {
   font-family: Georgia, serif; /* Définit la police principale du site */
 }
 
+.topright {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 20px;
+}
+
 .boite {
   display: inline-block; /* Permet à la boîte d’être centrée et contenue */
   text-align: middle; /* Aligne le texte à gauche à l’intérieur de la boîte */
