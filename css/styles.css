@@ -11,7 +11,7 @@ body {
   font-size: 20px;
 }
 
-.boite {
+.boit {
   display: inline-block; /* Permet à la boîte d’être centrée et contenue */
   text-align: middle; /* Aligne le texte à gauche à l’intérieur de la boîte */
   border: 0.2em solid #cc1313; /* Bordure bleu pâle */
