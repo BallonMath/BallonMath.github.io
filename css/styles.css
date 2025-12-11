@@ -1,12 +1,11 @@
 body {
-  margin: 1em; /* Ajoute une marge autour de toute la page */
-  padding: 1em; /* Ajoute de l’espace intérieur à la page */
-  font-family: Georgia, serif; /* Définit la police principale du site */
+  margin: 2em; /* Ajoute une marge autour de toute la page */
+  padding: 2em; /* Ajoute de l’espace intérieur à la page */
 }
 
 .topright {
   position: absolute;
-  top: 8px;
+  top: 7px;
   right: 16px;
 }
 .topleft {
@@ -15,22 +14,30 @@ body {
   left: 16px;
 }
 
-.boit {
-  display: inline-block; /* Permet à la boîte d’être centrée et contenue */
-  text-align: middle; /* Aligne le texte à gauche à l’intérieur de la boîte */
-  border: 0.2em solid #cc1313; /* Bordure bleu pâle */
-  background-color: rgba(73, 110, 75, 0.6); /* Fond blanc semi-transparent */
-  padding: 1em; /* Espace intérieur */
-  margin: 1em; /* Espace extérieur */
-  width: 60%; /* Largeur de la boîte */
-  color: black; /* Couleur du texte */
-}
-
-.voyage {
-  color: #1a9191; /* Couleur turquoise */
+.font {
+  color: #911a1a; /* Couleur turquoise */
   font-style: italic; /* Texte en italique */
   font-weight: bold; /* Texte en gras */
   font-size: 30px; /* Taille de texte */
+  font-family: Georgia, serif; /* Définit la police principale du site */
+}
+
+.petit {
+  color: #04300b; /* Couleur turquoise */
+  font-style: italic; /* Texte en italique */
+    font-weight: bold; /* Texte en gras */
+  font-family: Georgia, serif; /* Définit la police principale du site */
+}
+
+.boite {
+  display: inline-block; /* Permet à la boîte d’être centrée et contenue */
+  text-align: middle; /* Aligne le texte à gauche à l’intérieur de la boîte */
+  border: 0.5em solid #fdf6f6; /* Bordure bleu pâle */
+  background-color: rgba(186, 241, 188, 0.7); /* Fond blanc semi-transparent */
+  padding: 1em; /* Espace intérieur */
+  margin: 1em; /* Espace extérieur */
+  width: 50%; /* Largeur de la boîte */
+  color: black; /* Couleur du texte */
 }
 
 .titre {
