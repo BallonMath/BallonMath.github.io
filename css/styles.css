@@ -1,6 +1,7 @@
 body {
   margin: 2em; /* Ajoute une marge autour de toute la page */
   padding: 2em; /* Ajoute de l’espace intérieur à la page */
+  cursor : url("images/a.png"), auto;
 }
 
 .topright {
