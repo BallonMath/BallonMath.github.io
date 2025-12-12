@@ -1,66 +1,77 @@
 body {
-  margin: 2em; /* Ajoute une marge autour de toute la page */
-  padding: 2em; /* Ajoute de l’espace intérieur à la page */
-  cursor : url("images/a.png"), auto;
+    margin: 0;
+    padding: 0;
+    cursor: url("images/a.png"), auto;
+    font-family: Georgia, serif;
+}
+
+.topleft {
+    position: absolute;
+    top: 8px;
+    left: 16px;
 }
 
 .topright {
-  position: absolute;
-  top: 7px;
-  right: 16px;
-}
-.topleft {
-  position: absolute;
-  top: 8px;
-  left: 16px;
+    position: absolute;
+    top: 7px;
+    right: 16px;
 }
 
 .font {
-  color: #911a1a; /* Couleur turquoise */
-  font-style: italic; /* Texte en italique */
-  font-weight: bold; /* Texte en gras */
-  font-size: 30px; /* Taille de texte */
-  font-family: Georgia, serif; /* Définit la police principale du site */
+    color: #911a1a; /* Red */
+    font-style: italic;
+    font-weight: bold;
+    font-size: 30px;
 }
 
 .petit {
-  color: #04300b; /* Couleur turquoise */
-  font-style: italic; /* Texte en italique */
-    font-weight: bold; /* Texte en gras */
-  font-family: Georgia, serif; /* Définit la police principale du site */
+    color: #04300b; /* Dark green */
+    font-style: italic;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .boite {
-  display: inline-block; /* Permet à la boîte d’être centrée et contenue */
-  text-align: middle; /* Aligne le texte à gauche à l’intérieur de la boîte */
-  border: 0.5em solid #fdf6f6; /* Bordure bleu pâle */
-  background-color: rgba(186, 241, 188, 0.7); /* Fond blanc semi-transparent */
-  padding: 1em; /* Espace intérieur */
-  margin: 1em; /* Espace extérieur */
-  width: 50%; /* Largeur de la boîte */
-  color: black; /* Couleur du texte */
+    display: inline-block;
+    text-align: left;
+    border: 0.5em solid #fdf6f6;
+    background-color: rgba(186, 241, 188, 0.7);
+    padding: 1em;
+    margin: 1em;
+    width: 50%;
+    color: black;
 }
 
 .titre {
-  display: inline-block; /* Permet à la boîte d’être centrée et contenue */
-  text-align: left; /* Aligne le texte à gauche à l’intérieur de la boîte */
-  border: 0.2em solid #c3f7eb; /* Bordure bleu pâle */
-  background-color: rgba(194, 11, 11, 0.6); /* Fond blanc semi-transparent */
-  padding: 1em; /* Espace intérieur */
-  margin: 1em; /* Espace extérieur */
-  width: 60%; /* Largeur de la boîte */
-  color: black; /* Couleur du texte */
+    display: inline-block;
+    text-align: left;
+    border: 0.2em solid #c3f7eb;
+    background-color: rgba(194, 11, 11, 0.6);
+    padding: 1em;
+    margin: 1em;
+    width: 60%;
+    color: black;
 }
 
-/*#container {
-  width: 400px;
-  height: 400px
-  position: relative;
-  background: purple;
-}
-#animate {
-  width: 50px;
-  height: 50px
-  position: relative;
-  background: black;
+@media (max-width: 600px) {
+    .boite {
+        width: 90%;
+    }
+
+    img {
+        max-width: 90%;
+        height: auto;
+    }
+
+    .topleft img, .topright img {
+        width: 80px;
+    }
+
+    .font {
+        font-size: 24px;
+    }
+
+    .petit {
+        font-size: 14px;
+    }
 }
