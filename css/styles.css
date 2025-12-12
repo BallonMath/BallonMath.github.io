@@ -42,6 +42,17 @@ body {
     color: black;
 }
 
+.boite2 {
+    display: inline-block;
+    text-align: left;
+    border: 0.5em solid #fdf6f6;
+    background-color: rgba(173, 6, 6, 0.8);
+    padding: 1em;
+    margin: 1em;
+    width: 50%;
+    color: rgb(208, 236, 201);
+}
+
 .titre {
     display: inline-block;
     text-align: left;
