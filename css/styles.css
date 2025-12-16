@@ -109,8 +109,9 @@ body {
 .boite {
     background: rgba(157,240,160,0.9);
     padding: 20px;
-    width: 95%;
-    max-width: 1000px;
+    margin: 5px;
+    width: 110%;
+    max-width: 1200px;
     border-radius: 15px;
     display: inline-block;
     text-align: left;
