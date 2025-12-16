@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ballon Math - Jeu</title>
+
+<style>
+/* ===== STYLE ===== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, serif;
+    background-image: url("images/backgroundjeu.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: url("images/basketball.png"), auto;
+    text-align: center;
+}
+
+.boite {
+    display: inline-block;
+    background-color: rgba(157, 240, 160, 0.85);
+    border: 0.5em solid white;
+    padding: 20px;
+    margin-top: 40px;
+    width: 60%;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#equation {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.terrain {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.panier {
+    width: 120px;
+    height: 120px;
+    background-image: url("images/panier.png");
+    background-size: cover;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.panier:hover {
+    transform: scale(1.1);
+}
+
+.panier.reussi {
+    animation: panier 0.5s;
+}
+
+.panier.rate {
+    animation: rate 0.5s;
+}
+
+@keyframes panier {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-25px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes rate {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    50% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="boite">
+    <h2>Ballon Math 🏀</h2>
+
+    <p>Entre ton nom :</p>
+    <input type="text" id="nom" placeholder="Ton nom">
+    <br><br>
+    <button onclick="demarrerJeu()">Commencer</button>
+
+    <p id="message"></p>
+    <p id="equation"></p>
+</div>
+
+<div class="terrain">
+    <div class="panier" onclick="verifierReponse(this)">4</div>
+    <div class="panier" onclick="verifierReponse(this)">6</div>
+    <div class="panier" onclick="verifierReponse(this)">8</div>
+</div>
+
+<script>
+/* ===== SCRIPT ===== */
+let nomJoueur = "";
+let bonneReponse = 0;
+
+function demarrerJeu() {
+    nomJoueur = document.getElementById("nom").value;
+
+    if (nomJoueur === "") {
+        alert("Entre ton nom !");
+        return;
+    }
+
+    document.getElementById("message").innerHTML =
+        "Bonne chance " + nomJoueur + " 🏀";
+
+    nouvelleQuestion();
+}
+
+function nouvelleQuestion() {
+    let a = Math.floor(Math.random() * 5) + 1;
+    let b = Math.floor(Math.random() * 5) + 1;
+
+    bonneReponse = a + b;
+
+    document.getElementById("equation").innerHTML =
+        a + " + " + b + " = ?";
+}
+
+function verifierReponse(element) {
+    let valeur = parseInt(element.innerText);
+
+    if (valeur === bonneReponse) {
+        element.classList.add("reussi");
+        setTimeout(() => element.classList.remove("reussi"), 500);
+    } else {
+        element.classList.add("rate");
+        setTimeout(() => element.classList.remove("rate"), 500);
+    }
+
+    nouvelleQuestion();
+}
+</script>
+
+</body>
+</html>
