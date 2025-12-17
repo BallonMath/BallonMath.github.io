@@ -21,7 +21,7 @@ body {
     color: #911a1a; /* Red */
     font-style: italic;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .petit {
@@ -38,7 +38,7 @@ body {
     background-color: rgba(173, 6, 6, 0.8);
     padding: 1em;
     margin: 1em;
-    width: 50%;
+    width: 70%;
     color: rgb(208, 236, 201);
 }
 
@@ -160,5 +160,27 @@ body {
 }
 
 .hidden {
+    display: none;
+}
+
+.boutton {
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 16%;
+  border-radius: 30px;
+}
+
+.boutton:hover {
+  background-color: rgb(126, 14, 14);
+  border: 5px solid #cdfad4;
+  transform: scale(1.08);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add shadow on hover */
+}
+
+.hi :hover + .hide {
+  display: block;
+}
+
+.hide {
     display: none;
 }
