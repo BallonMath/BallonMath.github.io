@@ -80,18 +80,12 @@ body {
     font-family: Georgia, serif;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
 
-/* Backgrounds */
+
 .bg-index, .bg-param, .bg-game, .bg-regle {
     min-height: 100vh;
 }
 
-/* Navigation */
 .topleft, .topright {
     position: absolute;
     top: 15px;
@@ -100,7 +94,6 @@ body {
 .topleft { left: 20px; }
 .topright { right: 20px; }
 
-/* Layout */
 .center {
     display: flex;
     flex-direction: column;
@@ -109,12 +102,11 @@ body {
     min-height: 100vh;
 }
 
-/* Boxes */
 .boite {
     background: rgba(157,240,160,0.9);
     padding: 20px;
-    width: 80%;
-    max-width: 600px;
+    width: 110%;
+    max-width: 1200px;
     border-radius: 15px;
     display: inline-block;
     text-align: left;
@@ -122,7 +114,6 @@ body {
     color: black;
 }
 
-/* Buttons */
 .btn, button {
     margin-top: 20px;
     padding: 15px 25px;
@@ -130,7 +121,6 @@ body {
     cursor: pointer;
 }
 
-/* Param buttons */
 .param-buttons {
     display: flex;
     gap: 20px;
@@ -142,7 +132,6 @@ body {
     height: 200px;
 }
 
-/* Game */
 #top-bar {
     display: flex;
     justify-content: space-around;
@@ -161,7 +150,6 @@ body {
     font-size: 20px;
 }
 
-/* Screens */
 .screen {
     display: flex;
     flex-direction: column;
