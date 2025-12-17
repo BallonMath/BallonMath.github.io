@@ -80,11 +80,7 @@ body {
     font-family: Georgia, serif;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
+
 
 /* Backgrounds */
 .bg-index, .bg-param, .bg-game, .bg-regle {
@@ -112,8 +108,8 @@ body {
 /* Boxes */
 .boite {
     background: rgba(157,240,160,0.9);
-    padding: 20px;
-    width: 80%;
+    padding: 50px;
+    width: 2000000px;
     max-width: 600px;
     border-radius: 15px;
     display: inline-block;
