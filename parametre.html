@@ -10,39 +10,112 @@
 
     <link rel="stylesheet" href="css/styles.css">
     <script src="script/script.js"></script>
+    
+    <script>
+        /* ===== SCRIPT POUR LA PAGE DE PARAMÈTRES ===== */
+        
+        // Fonction exécutée au chargement de la page
+        window.onload = function() {
+            // Récupère le niveau de difficulté sauvegardé
+            let niveauActuel = obtenirDifficulte();
+            
+            // Applique la classe "selected" au niveau correspondant
+            appliquerSelection(niveauActuel);
+        };
+        
+        /* ===== FONCTION POUR CHANGER LE NIVEAU DE DIFFICULTÉ ===== */
+        // Cette fonction est appelée quand le joueur clique sur un niveau
+        function changerNiveau(niveau) {
+            // Sauvegarde le nouveau niveau
+            definirDifficulte(niveau);
+            
+            // Met à jour l'affichage visuel
+            appliquerSelection(niveau);
+            
+            // Affiche un message de confirmation
+            alert("Niveau " + niveau + " sélectionné !");
+        }
+        
+        /* ===== FONCTION POUR APPLIQUER LA SÉLECTION VISUELLE ===== */
+        // Cette fonction ajoute une bordure bleue au niveau sélectionné
+        function appliquerSelection(niveau) {
+            // Récupère tous les boutons de niveau
+            let boutons = document.querySelectorAll(".boutton");
+            
+            // Boucle for pour parcourir tous les boutons
+            for (let i = 0; i < boutons.length; i++) {
+                // Enlève la classe "selected" de tous les boutons
+                boutons[i].classList.remove("selected");
+            }
+            
+            // Ajoute la classe "selected" au bouton correspondant au niveau choisi
+            if (niveau === "debutant") {
+                document.getElementById("btn-debutant").classList.add("selected");
+            } else if (niveau === "intermediaire") {
+                document.getElementById("btn-intermediaire").classList.add("selected");
+            } else if (niveau === "avance") {
+                document.getElementById("btn-avance").classList.add("selected");
+            }
+        }
+    </script>
 </head>
 
 <body style="background-image: url('images/backgroundparametre.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
 
+    <!-- Bouton de retour vers la page d'accueil (coin supérieur gauche) -->
     <div class="topleft">
         <a href="index.html"><img src="images/icongauche.jpg" width="180" alt="Retour"></a>
     </div>
 
     <center>
-            <img src="images/parametres.png" width="700" alt="Paramètres">
-            <br>
+        <!-- Image du titre "Paramètres" -->
+        <img src="images/parametres.png" width="700" alt="Paramètres">
+        <br>
+        
+        <!-- Boîte d'explication des niveaux -->
         <section class="boite">
-             <center><p class="petit">Ici, tu pourras régler les options du jeu. Il y a 3 niveau : <ol>
-                <li>Débutant(3ème à 6ème année) : Addition et Soustraction simples avec des nombres moins que 100</li>
-                 <li>Intermédiare(7ème) : Addition, Soustraction, Multiplication et Division avec tous les nombres entiers</li>
-                 <li>Avancé(8ème année) : Addition, Soustraction,
-                Multiplication et Division avec tous les nombres incluant décimals</li></ol></p></center>
+            <center><p class="petit">Ici, tu pourras régler les options du jeu. Il y a 3 niveaux : 
+                <ol>
+                    <li>Débutant (3ème à 6ème année) : Addition et Soustraction simples avec des nombres moins que 100</li>
+                    <li>Intermédiaire (7ème) : Addition, Soustraction, Multiplication et Division avec tous les nombres entiers</li>
+                    <li>Avancé (8ème année) : Addition, Soustraction, Multiplication et Division avec tous les nombres incluant décimaux</li>
+                </ol>
+            </p></center>
         </section>
         <br>
-        <section class="boutton" style="left: 16px;">
-        <div class="hi">
-        <img src="images/debutant.png" width="300" alt="Paramètres">
-        </div>
-        <div class="hide"><p>aaaaa</p></div>
+        
+        <!-- BOUTON DÉBUTANT -->
+        <!-- Bouton cliquable pour sélectionner le niveau débutant -->
+        <section class="boutton" id="btn-debutant" onclick="changerNiveau('debutant')">
+            <img src="images/debutant.png" width="300" alt="Débutant">
+            <div class="hide">
+                <p><strong>Niveau Débutant 🟢</strong><br>
+                Addition et Soustraction simples (nombres < 100)</p>
+            </div>
         </section>
-        <section class="boutton">
-        <img src="images/intermediaire.png" width="300" alt="Paramètres">
+
+        <!-- BOUTON INTERMÉDIAIRE -->
+        <!-- Bouton cliquable pour sélectionner le niveau intermédiaire (par défaut) -->
+        <section class="boutton" id="btn-intermediaire" onclick="changerNiveau('intermediaire')">
+            <img src="images/intermediaire.png" width="300" alt="Intermédiaire">
+            <div class="hide">
+                <p><strong>Niveau Intermédiaire 🟡</strong><br>
+                Toutes opérations avec nombres entiers</p>
+            </div>
         </section>
-        <section class="boutton" style="right: 16px;">
-        <img src="images/avance.png" width="300" alt="Paramètres">
+
+        <!-- BOUTON AVANCÉ -->
+        <!-- Bouton cliquable pour sélectionner le niveau avancé -->
+        <section class="boutton" id="btn-avance" onclick="changerNiveau('avance')">
+            <img src="images/avance.png" width="300" alt="Avancé">
+            <div class="hide">
+                <p><strong>Niveau Avancé 🔴</strong><br>
+                Toutes opérations incluant décimaux</p>
+            </div>
         </section>
     </center>
 
+    <!-- Pied de page -->
     <footer>
         <center>
             <p>Auteur : Mahmoud Salem et Jerry Kiremesha — ICS3UC — Jeu éducatif</p>
