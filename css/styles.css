@@ -234,12 +234,12 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre portée légère */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre sur le texte */
     transition: all 0.3s ease; /* Animation douce pour tous les changements */
+    margin-bottom: 15px; /* Marge en bas de 15px */
 }
 
 .panier-basketball img {
     width: 100%; /* Largeur de l’image égale au conteneur */
     height: auto; /* Hauteur proportionnelle pour conserver les proportions */
-    margin-top: -10px; /* Décalage vers le haut de 10px */
 }
 
 /* Paniers visibles quand le jeu est actif */
