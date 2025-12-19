@@ -215,6 +215,7 @@ body {
     transition: all 0.3s ease; /* Animation pour tous les changements */
     opacity: 0; /* Invisible au départ */
     pointer-events: none; /* Pas cliquable au départ */
+    position: relative;
 }
 
 
