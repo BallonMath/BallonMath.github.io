@@ -4,81 +4,125 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- Définit l'encodage des caractères UTF-8 pour supporter les accents -->
     <meta charset="UTF-8">
+    
+    <!-- Configuration pour un affichage responsive sur mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Titre affiché dans l'onglet du navigateur -->
     <title>Ballon Math - Jeu</title>
+    
+    <!-- Lien vers la feuille de style CSS -->
     <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Lien vers le fichier JavaScript contenant la logique du jeu -->
     <script src="script/script.js"></script>
-    <style>
-  body {
-    cursor: url('images/basketball.png'), auto;
-  }
-</style>
 </head>
 
-<body style="background-image: url('images/backgroundjeu.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; cursor: url('images/basketball.png'), auto;">
+<!-- Corps de la page avec image de fond fixe -->
+<body style="background-image: url('images/backgroundjeu.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
 
     <!-- Bouton de retour vers la page d'accueil (coin supérieur gauche) -->
-    <div class="topleft">
-        <a href="index.html"><img src="images/icongauche.jpg" width="250" alt="Retour"></a>
+    <div class="coin-superieur-gauche">
+        <!-- Lien vers index.html avec image cliquable -->
+        <a href="index.html">
+            <img src="images/icongauche.jpg" width="180" alt="Retour">
+        </a>
     </div>
 
+    <!-- Conteneur principal centré pour tous les éléments du jeu -->
     <center>
-        <!-- ZONE 1 : SAISIE DU NOM -->
-        <!-- Cette zone permet au joueur d'entrer son nom avant de commencer -->
-        <div id="zoneNom" class="boite">
+        <!-- Saisir le nom de l'utilisateur -->
+        <div id="zoneNom" class="boite-vert">
+            <!-- Titre principal du jeu -->
             <h2>Ballon Math 🏀</h2>
+            
+            <!-- Instruction pour le joueur -->
             <p>Entre ton nom :</p>
+            
+            <!-- Champ de saisie pour le nom du joueur -->
             <input type="text" id="nom" placeholder="Ton nom">
+            
+            <!-- Espacement vertical -->
             <br><br>
+            
+            <!-- Bouton pour démarrer le jeu (appelle la fonction demarrerJeu()) -->
             <button onclick="demarrerJeu()">Commencer</button>
         </div>
 
-        <!-- ZONE 2 : COMPTE À REBOURS -->
-        <!-- Affiche le compte à rebours "3, 2, 1, êtes-vous prêt ?" -->
-        <div id="compteRebours" class="boite hidden">
+        <!-- Compte a rebours. Affiche : Êtes-vous prêt ? 3, 2, 1, -->
+        <div id="compteRebours" class="boite-vert cache">
+            <!-- Affichage du compte à rebours en grand -->
             <h2 id="compte" style="font-size: 48px; color: #d32f2f;">3</h2>
         </div>
 
-        <!-- ZONE 3 : JEU ACTIF -->
-        <!-- Zone principale du jeu avec la question, le score et le timer -->
-        <div id="zoneJeu" class="boite hidden">
+        <!-- Zone principale affiche pendant le jeu -->
+        <div id="zoneJeu" class="boite-vert cache">
+            <!-- Titre du jeu -->
             <h2>Ballon Math 🏀</h2>
             
-            <!-- Message de bienvenue au joueur -->
+            <!-- Message de bienvenue personnalisé avec le nom du joueur -->
             <p id="message"></p>
             
-            <!-- Affichage du score -->
+            <!-- Affichage du score actuel -->
             <p id="score">Score : 0 points</p>
             
-            <!-- Affichage du temps restant -->
-            <p id="timer">Temps : 60s</p>
+            <!-- Affichage du temps restant (chronomètre) -->
+            <p id="chronometre">Temps : 60s</p>
             
             <!-- Affichage de la question mathématique -->
             <p id="equation"></p>
         </div>
-
-        <!-- ZONE 4 : ÉCRAN DE FIN -->
-        <!-- Affiche le résultat final et permet de recommencer -->
-        <div id="ecranFin" class="boite hidden">
+        
+          <!-- Ecran de fin : Affiche le résultat final et les scores précédents -->
+        <div id="ecranFin" class="boite-vert cache">
+            <!-- Titre de fin de partie -->
             <h2>Partie terminée ! 🏀</h2>
+            
+            <!-- Zone pour afficher le message final et le score -->
             <h3 id="resultatFinal"></h3>
+            
+            <!-- Section pour afficher les scores précédents de la session -->
+            <div id="scoresPrecedents">
+                <h4>Scores de cette session :</h4>
+                <!-- Liste qui sera remplie par le JavaScript -->
+                <ul id="listeScores"></ul>
+            </div>
+            
+            <!-- Espacement vertical -->
             <br>
+            
+            <!-- Bouton pour recommencer une nouvelle partie -->
             <button onclick="recommencer()">Recommencer</button>
         </div>
     </center>
 
-    <!-- TERRAIN DE JEU : LES TROIS PANIERS -->
-    <!-- Ces trois boîtes représentent les paniers où le joueur clique pour répondre -->
-    <div class="terrain">
-        <div class="panier" onclick="verifierReponse(this)"><img src="images/panier.png" width="250" alt="Panier de basketball"></div>
-        <div class="panier" onclick="verifierReponse(this)"><img src="images/panier.png" width="250" alt="Panier de basketball"></div>
-        <div class="panier" onclick="verifierReponse(this)"><img src="images/panier.png" width="250" alt="Panier de basketball"></div>
+      <!-- Zone contenant les 3 paniers cliquables. Les paniers sont invisibles et non cliquables avant le début du jeu -->
+<div class="zone-terrain">
+    <!-- Panier 1 : Cliquable, appelle verifierReponse() avec "this" comme paramètre -->
+    <div class="panier-basketball" onclick="verifierReponse(this)" role="button" tabindex="0" aria-label="Réponse 1">
+        <div class="carre-reponse"></div>
+        <img src="images/panier.png" alt="Panier de basketball">
     </div>
+    
+    <!-- Panier 2 : Cliquable, appelle verifierReponse() avec "this" comme paramètre -->
+    <div class="panier-basketball" onclick="verifierReponse(this)" role="button" tabindex="0" aria-label="Réponse 2">
+        <div class="carre-reponse"></div>
+        <img src="images/panier.png" alt="Panier de basketball">
+    </div>
+    
+    <!-- Panier 3 : Cliquable, appelle verifierReponse() avec "this" comme paramètre -->
+    <div class="panier-basketball" onclick="verifierReponse(this)" role="button" tabindex="0" aria-label="Réponse 3">
+        <div class="carre-reponse"></div>
+        <img src="images/panier.png" alt="Panier de basketball">
+    </div>
+</div>
 
-    <!-- Pied de page -->
     <footer>
+        <!-- vert centré du pied de page -->
         <center>
+            <!-- Crédits -->
             <p>Auteur : Mahmoud Salem et Jerry Kiremesha — ICS3UC — Jeu éducatif</p>
         </center>
     </footer>
