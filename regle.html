@@ -1,66 +1,105 @@
 <!-- Auteur : Mahmoud Salem et Jerry Kiremesha | Cours : ICS3UC | -->
 <!-- regle.html - Règles du jeu -->
- <!-- Description: Page expliquant les règles et objectifs du jeu Ballon Math -->
 
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Métadonnées de base -->
+    <!-- Encodage UTF-8 pour supporter les caractères spéciaux et accents français -->
     <meta charset="UTF-8">
+    
+    <!-- Configuration responsive pour adapter l'affichage aux différents écrans -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Titre de la page -->
+    
+    <!-- Titre affiché dans l'onglet du navigateur -->
     <title>Ballon Math - Règles</title>
 
-    <!-- Lien vers la feuille de styles CSS -->
+    <!-- Lien vers la feuille de style CSS principale -->
     <link rel="stylesheet" href="css/styles.css">
-
-    <!-- Lien vers le feuille JavaScript -->
+    
+    <!-- Lien vers le fichier JavaScript (nécessaire pour certaines fonctions) -->
     <script src="script/script.js"></script>
 </head>
 
+<!-- Corps de la page avec image de fond fixe -->
 <body style="background-image: url('images/backgroundregle.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
 
-    <!-- Bouton de retour vers la page d'accueil (coin supérieur gauche) -->
-    <div class="topleft">
-        <a href="index.html"><img src="images/icongauche.jpg" width="250" alt="Retour"></a>
+    <!-- Icône dans le coin supérieur gauche pour retourner à l'accueil -->
+    <div class="coin-superieur-gauche">
+        <!-- Lien cliquable vers la page d'accueil -->
+        <a href="index.html">
+            <!-- Image de l'icône retour -->
+            <img src="images/icongauche.jpg" width="180" alt="Retour">
+        </a>
     </div>
 
-    <!-- Contenu principal des règles -->
+    <!-- Contenu principal centré sur la page -->
     <center>
-        <section class="font">
-            <!-- Image titre "Règles" -->
+        <!-- Section principale avec la classe de police pour les titres -->
+        <section class="police-titre">
+
+            <!-- Image du titre "Règles" -->
+            <img src="images/regle.png" width="550" alt="Règles">
+            
+            <!-- Section qui explique l'objectif principal -->
+            <section class="boite-rouge">
+                <center>
+                    <!-- Titre de la section -->
+                    <h3>Objectif : </h3>
+                    
+                    <!-- Explication de l'objectif avec couleur rose clair -->
+                    <p style="color: rgb(253, 199, 199);">
+                        Marquer le maximum de points en répondant correctement aux questions de math.
+                    </p>
+                </center>
+            </section>
+
+            <!-- Espacement vertical -->
             <br>
-            <img src="images/regle.png" width="600" alt="Règles">
-            <br>
-                    <!-- Section Objectif du jeu -->
-                    <section class="boite2"><center><h3>Objectif : </h3><p style="color: rgb(253, 199, 199);">Marquer le maximum de points en répondant correctement aux questions de math.</center></p></section>
-                    <br>
-                    <!-- Section des règles de base -->
-                    <section class="boite2">
-                    <center><h3>Règles de base : </h3>
-                    <!-- Règle : Temps -->
+            
+             <!-- Section des détailles des règles principales du jeu -->
+            <section class="boite-rouge">
+                <center>
+                    <!-- Titre de la section -->
+                    <h3>Règles de base : </h3>
+                    
+                    <!-- RÈGLE 1 : Le temps -->
                     <h4>Temps :</h4>
-                    <p style="color: rgb(253, 199, 199);">Tu as 60 secondes pour répondre à chaque question.</p>
-                    <!-- Règle : Questions -->
+                    <!-- Explication avec couleur rose clair -->
+                    <p style="color: rgb(253, 199, 199);">
+                        Tu as 60 secondes pour répondre à un maximum de questions.
+                    </p>
+                    
+                    <!-- RÈGLE 2 : Les questions -->
                     <h4>Questions :</h4>
-                    <p style="color: rgb(253, 199, 199);">Opérations simples : addition, soustraction, multiplication et division.</p>
+                    <!-- Liste des types d'opérations -->
+                    <p style="color: rgb(253, 199, 199);">
+                        Opérations : addition, soustraction, multiplication et division.
+                    </p>
+                    
+                    <!-- RÈGLE 3 : réponse correcte -->
                     <h4>Réponse correcte :</h4>
-                    <p style="color: rgb(253, 199, 199);">Si ta réponse est juste, tu peux cliquer pour essayer de marquer un panier.</p>
-                    <!-- Règle : Points -->
+                    <!-- Explication de ce qui se passe en cas de bonne réponse -->
+                    <p style="color: rgb(253, 199, 199);">
+                        Si ta réponse est juste, tu marques un panier et gagnes des points! 
+                    </p>
+                    
+                    <!-- RÈGLE 4 : systeme des points -->
                     <h4>Points :</h4> 
-                    <p style="color: rgb(253, 199, 199);">Chaque panier réussi rapporte 2 points. Un panier raté est 0</p></center>
-                    </section>
+                    <!-- Explication du nombre de points par bonne réponse -->
+                    <p style="color: rgb(253, 199, 199);">
+                        Chaque panier réussi rapporte 2 points. Un panier raté ne gagne ou perd pas des points.
+                    </p>
+                </center>
+            </section>
         </section>
     </center>
 
-    <!-- Pied de page -->
     <footer>
         <center>
+            <!-- Crédits des auteurs et cours -->
             <p>Auteur : Mahmoud Salem et Jerry Kiremesha — ICS3UC — Jeu éducatif</p>
         </center>
     </footer>
 
 </body>
 </html>
-
