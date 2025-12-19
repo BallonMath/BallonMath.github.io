@@ -22,6 +22,9 @@
     <!-- Script specifique a la page de parametre : Gère la sélection et l'affichage des niveaux -->
   <script>
 // Attend que la page soit complètement chargée
+/* window.onload attend que la page finit a chargé complètement avant d'appliquer le niveau intermèdiaire
+Source : https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event
+*/
 window.onload = function() {
     let niveauActuel = obtenirDifficulte();
     appliquerSelection(niveauActuel);
@@ -44,6 +47,7 @@ function changerNiveau(niveau) {
 // paramètre : niveau - le niveau à mettre en évidence
 function appliquerSelection(niveau) {
     // récupère tous les boutons de niveau
+    /*querySelectorAll Source : https://developer.mozilla.org/fr/docs/Web/API/Document/querySelectorAll */
     let boutons = document.querySelectorAll(".conteneur-bouton");
 
     // enlève la classe "selectionne" de tous les boutons
@@ -52,6 +56,7 @@ function appliquerSelection(niveau) {
     });
 
     // ajoute la classe "selectionne" au bouton correspondant
+    //Source : https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
     if (niveau === "debutant") {
         document.getElementById("btn-debutant").classList.add("selectionne");
     } else if (niveau === "intermediaire") {

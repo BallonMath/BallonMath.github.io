@@ -1,6 +1,8 @@
 <!-- Auteur : Mahmoud Salem et Jerry Kiremesha | Cours : ICS3UC | -->
 <!-- jeu.html - Page du jeu principal -->
 
+<!-- Source pour verifier la réponses quands on clicque sur les paniers  : Recherche en Ligne -->
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -15,11 +17,6 @@
     
     <!-- Lien vers la feuille de style CSS -->
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        body {
-        cursor: url("images/icongauche.jpg"), auto;
-        }
-    </style>
     
     <!-- Lien vers le fichier JavaScript contenant la logique du jeu -->
     <script src="script/script.js"></script>
@@ -106,6 +103,7 @@
       <!-- Zone contenant les 3 paniers cliquables. Les paniers sont invisibles et non cliquables avant le début du jeu -->
 <div class="zone-terrain">
     <!-- Panier 1 : Cliquable, appelle verifierReponse() avec "this" comme paramètre -->
+    <!-- On utilise "this" comme paramètre pour dire quel panier a verifier-->
     <div class="panier-basketball" onclick="verifierReponse(this)" role="button" tabindex="0" aria-label="Réponse 1">
         <div class="carre-reponse"></div>
         <img src="images/panier.png" alt="Panier de basketball">

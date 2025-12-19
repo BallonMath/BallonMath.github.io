@@ -1,6 +1,14 @@
 /* Auteur : Mahmoud Salem et Jerry Kiremesha | Cours : ICS3UC | */
 /* Page styles.css : Styles de Ballon Math */
 
+/* Sources : 
+Coin en haut : https://www.w3schools.com/css/tryit.asp?filename=trycss_image_text_top_right
+Agrandissement hover : https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/transform-function/scale
+Keyframes animation bonne réponse et mauvaise réponse : https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@keyframes 
+Pointeur curseur : https://developer.mozilla.org/fr/docs/Web/CSS/Reference/Properties/cursor
+@media responsive a l'écran : https://www.w3schools.com/cssref/atrule_media.php
+*/
+
 /* Style principal du corps de la page */
 body {
     margin: 0; /* Pas de marge autour du body */

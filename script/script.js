@@ -1,6 +1,14 @@
 //Auteur : Mahmoud Salem et Jerry Kiremesha | Cours : ICS3UC |
 // script.js Page de javascript
 
+/* Sources : 
+Chronomètre : https://dev.to/jethron22/javascript-timer-1994
+Heure : Recherche en ligne
+fonction .trim() : Recherche en ligne
+localStorage Source : https://www.w3schools.com/jsref/prop_win_localstorage.asp
+*/
+
+
 // Variable globales pour le jeu
 let nomJoueur = ""; // Stocke le nom du joueur
 let score = 0; // Score actuel du joueur
@@ -286,6 +294,7 @@ function nouvelleQuestion() {
         paniers[i].querySelector('.carre-reponse').innerHTML = reponses[i]; // Affiche la réponse
         paniers[i].classList.remove("animation-reussi", "animation-rate"); // Enlève les animations précédentes
         paniers[i].style.pointerEvents = "auto"; // Réactive les clics
+        //pointerEvents Source : https://www.w3schools.com/cssref/css3_pr_pointer-events.php
     }
 }
 
@@ -409,6 +418,7 @@ function afficherScoresPrecedents() {
         li.innerHTML = emojiDifficulte + " " + scoreData.nom + " : " + 
                        scoreData.score + " pts (" + scoreData.heure + ")";
         listeScores.appendChild(li); // Ajoute l'élément à la liste
+        //appemdChild Source : https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
     }
 }
 
