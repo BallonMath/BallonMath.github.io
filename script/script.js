@@ -168,6 +168,7 @@ function genererFaussesReponses(bonneRep, niveau) {
 
 // Fonction pour melanger un tableau
 // Algorithme de Fisher-Yates pour mélanger aléatoirement un tableau
+//Source de l’algorithme Fisher-Yates : https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_random2 
 function melangerTableau(tableau) {
     for (let i = tableau.length - 1; i > 0; i--) { // Parcourt le tableau en sens inverse
         let j = Math.floor(Math.random() * (i + 1)); // Index aléatoire
@@ -444,3 +445,4 @@ function recommencer() {
         timerElement.style.fontWeight = "bold"; // Texte en gras
     }
 }
+
